@@ -1,8 +1,240 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+html, body {
+  //font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-size:14px;
+  font-family: 'Open Sans';
+  width:100%;
+  height: 100%;
+  //overflow: hidden;  
 }
 
 a {
   color: #00B7FF;
 }
+
+h1 {
+	font-family: 'Open Sans';
+	font-weight: 600;
+}
+
+.redText {
+	color:red;
+}
+
+.greenText {
+	color:green;
+}
+
+.carEnabled {
+	border: solid green 3px;	
+}
+
+.carDisabled {
+	border: solid white 3px;	
+	cursor: pointer;
+}
+
+#wrapper {
+	font-family: 'Open Sans';
+	position: relative;
+	width:100%;
+  	height: 100%;
+  	text-align:center;  	
+  	#gameWrapper {
+  		position: relative;
+		margin:0 auto;
+		width: 100%;
+		#waitingListWrapper {
+			position: absolute;
+			top:10px;
+			right:10px;		
+			width:150px;	
+			height: 200px;
+			overflow: hidden;
+			text-align: center;
+			border: solid #ccc 1px;
+		}
+	  	#webcam {
+			position: relative;			
+			margin:0 auto;
+			width:640px;
+			height: 480px;
+			border:solid black 1px;
+			overflow: hidden;
+			#soundControll {
+				position: absolute;
+				top:10px;
+				right:10px;
+				width: 32px;
+				height: 32px;
+				cursor: pointer;				
+				z-index: 4;				
+			}
+			.soundOn {
+					position: absolute;
+					background: url('../images/sound_on.png');
+					width: 32px;
+					height: 32px;
+			}
+			.soundOff {
+				position: absolute;
+				background: url('../images/sound_off.png');
+				width: 32px;
+				height: 32px;
+			}
+			#background {
+				position: absolute;
+				top:0px;
+				left:0px;
+				width: 640px;
+				height: 480px;
+				background: url('../images/box_template_2.png');
+				z-index: 3;
+			}
+			#plane {
+				position: absolute;
+				top:10px;
+				left:-300px;
+				width:300px;
+				height: 47px;
+				background: url('../images/plane_template.png');
+				z-index: 5;
+				#planeLogo {
+					position: absolute;
+					top:13px;
+					left: 105px;
+					width:180px;
+					height: 25px;
+				}
+			}
+			#timer {
+				position: absolute;
+				top:15px;
+				left:10px;
+				color:red;
+				z-index: 5;
+				font-size:50px;
+			}
+		}
+		#message {
+			position: relative;
+			margin:0 auto;
+			width:640px;
+			text-align:center;
+			#logoImage {
+				width:640px;
+				text-align: right;
+			}
+		}
+		#audio {
+			visibility:hidden;
+		}
+	}
+	#login {
+		position: relative;
+		margin:0 auto;
+		width:640px;
+		text-align:center;
+	}
+}
+
+#flogos {
+	position: relative;
+	margin: 0 auto;
+	margin-top:50px;
+ 	height: 50px;
+ 	width: 330px;
+ .powered {
+  line-height: 50px;
+  height: 50px;
+  display: block;
+  float: left;
+ }
+}
+.flogo {
+ margin: 0 0 0 5px;
+ display: inline-block;
+ width: 50px;
+ height: 50px;
+ &.arduino {
+  background: transparent url(../images/arduino_bw.png) no-repeat center center;
+  &:hover {
+   background: transparent url(../images/arduino.png) no-repeat center center;
+  }
+ }
+ &.nodejs {
+  background: transparent url(../images/nodejs_bw.png) no-repeat center center;
+  &:hover {
+   background: transparent url(../images/nodejs.png) no-repeat center center;
+  }
+ }
+ &.angularjs {
+  background: transparent url(../images/angular_bw.png) no-repeat center center;
+  &:hover {
+   background: transparent url(../images/angular.png) no-repeat center center;
+  }
+ }
+ &.html5 {
+  background: transparent url(../images/html5_bw.png) no-repeat center center;
+  &:hover {
+   background: transparent url(../images/html5.png) no-repeat center center;
+  }
+ }
+}
+
+@-webkit-keyframes plane {
+ 0% {
+  -webkit-transform: translate(940px, 0px);
+ }
+ 100% {
+  -webkit-transform: translate(0px, 0px);
+ }
+}
+
+@-moz-keyframes plane {
+ 0% {
+  -moz-transform: translate(940px, 0px);
+ }
+ 100% {
+  -moz-transform: translate(0px, 0px);
+ }
+}
+
+@-o-keyframes plane {
+ 0% {
+  -o-transform: translate(940px, 0px);
+ }
+ 100% {
+  -o-transform: translate(0px, 0px);
+ }
+}
+
+@keyframes plane {
+ 0% {
+  transform: translate(940px, 0px);
+ }
+ 100% {
+  transform: translate(0px, 0px);
+ }
+}
+
+.plane {
+ -webkit-animation-name: plane;
+ -moz-animation-name: plane;
+ -o-animation-name: plane;
+ animation-name: plane;
+}
+
+.animated {
+ -webkit-animation-fill-mode: both;
+ -moz-animation-fill-mode: both;
+ -ms-animation-fill-mode: both;
+ -o-animation-fill-mode: both;
+ animation-fill-mode: both;
+ -webkit-animation-timing-function:linear;
+ -webkit-animation-duration: 10s;
+ -moz-animation-duration: 10s;
+ -ms-animation-duration: 10s;
+ -o-animation-duration: 10s;
+ animation-duration: 10s;
+}
+

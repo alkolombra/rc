@@ -1,8 +1,9 @@
 'use strict';
 angular.module('rc', ['ngResource', 'ui']).
-config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {		
 	$routeProvider.
-		when('/main', { templateUrl:'/views/main.html', controller:MainCtrl}).
+		when('/main', { templateUrl:'/views/main.html', controller:MainCtrl}).				
+		when('/video', { templateUrl:'/views/video.html', controller:VideoCtrl}).
 		otherwise({ redirectTo:'/main'});
 }]).
 filter('break', function() {

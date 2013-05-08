@@ -1,1 +1,60 @@
-img(ng-src="//webcam.mediamagic.co.il:18390/cam_1.cgi", width="320", height="240", border="0")
+#gameWrapper(ng-show="showGameWrapper")
+	h1 {{ driver.nickname }} is driving now.
+	br
+	#cars
+		img(ng-click="selectCar(1)", class="{{ car1Class }}", src="./images/car1_thumbnail.jpg", width="120", height="120") 
+		img(ng-click="selectCar(2)", class="{{ car2Class }}", src="./images/car2_thumbnail.jpg", width="120", height="120")
+	br
+	#webcam
+		#timer {{timeLeft}}	
+		#background
+		#soundControll(class="{{ soundClass }}", ng-click="toggleSound()")
+		#plane(class="animated {{ animatedPlane }}")
+			#planeLogo
+				img#planeLogoImage(width="180", height="25")	
+				//img(ng-src="{{ plane.logo }}", width="180", height="25")	
+		img(ng-src="{{ webcamUrl }}{{ randomParam }}", width="640", height="480", border="0")
+	#message
+		#logoImage
+			img(src="./Images/logo.png")
+			a(style="float:left;font-size:12px;", ng-click="videoLost()") Lost the video feed?
+		br
+		sapn {{ message }}
+		br
+		button(class="btn btn-primary", ng-click="playAgain()", ng-show="showPlayAgain") Play Again
+		br
+		a(ng-show="download.show", href="{{ download.url }}", download="{{ download.file }}") Download your last ride.
+	#waitingListWrapper(ng-show="showWaitingList")
+		span(style="font-weight:600;text-decoration:underline;") waiting to drive
+		#waitingList
+			.waitingUser(ng-repeat="user in waitingList")
+				span {{ user }}
+	#audio
+		audio#audioStartGame
+			source(src="./start.mp3", type="audio/mpeg")
+		audio#audioEndGame
+			source(src="./end.mp3", type="audio/mpeg")
+		audio#audioBeep
+			source(src="./beep.mp3", type="audio/mpeg")
+		audio#audioHorn
+			source(src="./horn.mp3", type="audio/mpeg")
+		audio#audioPlane
+			source(src="./plane.mp3", type="audio/mpeg")
+		audio#audioMusic(loop)
+			source(src="./music.mp3", type="audio/mpeg")
+#login(ng-show="!showGameWrapper")
+	br
+	img(src="./images/game_logo.jpg")
+	br
+	span(class="{{ loginMessageClass }}") {{ loginMessage }}
+	br
+	input#loginInput(type="text", ng-disabled="!connected", onkeyup="angular.element(this).scope().updateName(this.value)")		
+	br
+	button(class="btn btn-primary", ng-click="login()", ng-disabled="!validNickname") Login
+#flogos 
+	.powered powered by: 
+	.nodejs.flogo
+	.html5.flogo
+	.angularjs.flogo
+	.arduino.flogo
+a(href="/gallery") TEMP

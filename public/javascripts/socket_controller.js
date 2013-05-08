@@ -12,7 +12,6 @@ var blackListEvents = ['DATA_FROM_SERVER', 'REQUEST_FOR_CLIENT', 'REQUEST_FOR_CL
 function SocketController(_io) {
 	
 	_this.io = _io;
-
 	// var globalEvent = '*';
 	//   _this.io.$emit = function (name) {
 	//     if(!this.$events) return false;

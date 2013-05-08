@@ -1,14 +1,15 @@
 doctype 5
 html#mainLayout(ng-app="rc", ng-controller="GlobalCtrl")
 	head
-		title= title
+		title= title		
+		link(rel='stylesheet', href='//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap.no-icons.min.css')
+		link(rel="stylesheet", href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;lang=en")
 		link(rel='stylesheet', href='/stylesheets/style.css')
 		script(src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js")
 		script(src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js")
 		script(src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular-resource.min.js")			
 		script(src="/javascripts/angular-ui/angular-ui.js")
 		script(src="/javascripts/bootstrap/bootstrap.js")
-		link(rel='stylesheet', href='//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap.no-icons.min.css')
 		script(src="/javascripts/app.js")
 		script(src="/javascripts/controllers.js")
 		script(src="/javascripts/socket_controller.js")
